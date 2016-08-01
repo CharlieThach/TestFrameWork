@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="main" name="Running Ant">
 	<target name="main"	depends="compile">
+	<java classname="testFrameWork.Starter">
+		<classpath>
+			<pathelement path="C:/GitFrameWork/TestingFrameWork/CompileCode"/>
+		</classpath>
+	</java>
 	</target>
 	
 	<target name="compile">
-	<javac srcdir="./src" destdir="./CompileCode"/>
+	<javac srcdir="./src" destdir="C:/GitFrameWork/TestingFrameWork/CompileCode"/>
 	</target>
+	
 	
 </project>
