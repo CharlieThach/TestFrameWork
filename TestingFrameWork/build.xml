@@ -3,13 +3,13 @@
 	<target name="main"	depends="compile">
 	<java classname="testFrameWork.Starter">
 		<classpath>
-			<pathelement path="C:/GitFrameWork/TestingFrameWork/CompileCode"/>
+			<pathelement path="./CompileCode"/>
 		</classpath>
 	</java>
 	</target>
 	
 	<target name="compile">
-	<javac srcdir="./src" destdir="C:/GitFrameWork/TestingFrameWork/CompileCode"/>
+	<javac srcdir="./src" destdir="./CompileCode"/>
 	</target>
 	
 	
