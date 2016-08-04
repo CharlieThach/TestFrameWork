@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="8187" started-at="2016-08-04T01:45:36Z" finished-at="2016-08-04T01:45:44Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="8187" started-at="2016-08-04T01:45:36Z" finished-at="2016-08-04T01:45:44Z">
+      <class name="testFrameWork.loginGmail">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testFrameWork.loginGmail@215be6bb]" name="setup" is-config="true" duration-ms="8147" started-at="2016-08-03T18:45:36Z" finished-at="2016-08-03T18:45:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="test2()[pri:0, instance:testFrameWork.loginGmail@215be6bb]" name="test2" duration-ms="5" started-at="2016-08-03T18:45:44Z" finished-at="2016-08-03T18:45:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+        <test-method status="PASS" signature="houseCleaning()[pri:0, instance:testFrameWork.loginGmail@215be6bb]" name="houseCleaning" is-config="true" duration-ms="0" started-at="2016-08-03T18:45:44Z" finished-at="2016-08-03T18:45:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- houseCleaning -->
+      </class> <!-- testFrameWork.loginGmail -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
