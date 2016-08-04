@@ -6,9 +6,7 @@ import java.util.Properties;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
-
-import utility.property;
-
+import utility.loadProperty;
 
 public class loginGmail {
 public String url = "http://www.gmail.com";
@@ -16,10 +14,10 @@ public WebDriver driver;
 
   @BeforeTest
   public void setup() throws IOException{
-	  property proper = new utility.property();
+	  loadProperty proper = new utility.loadProperty();
 	  Properties prop = proper.readPropFile(); 
 	  
-	  System.setProperty("webdriver.chrome.driver", "./lib/chromedriver.exe");
+	  System.setProperty(prop.getProperty("drivername"), prop.getProperty("chromedriver"));
 	  driver = new ChromeDriver();
 	  driver.get(url);
   }
@@ -30,7 +28,7 @@ public WebDriver driver;
   
   @AfterMethod
   public void houseCleaning(){
-	
+	driver.quit();
   }
 
 }

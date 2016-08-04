@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class property {
+public class loadProperty {
 
 	public Properties readPropFile() throws IOException{
 		String result ="";
 		Properties prop = new Properties();
-		String propFileName = "resources/lib/config.properties";
+		String propFileName = "config.properties";
 		
 		InputStream in = getClass().getClassLoader().getResourceAsStream(propFileName);
 		if(in!= null){
