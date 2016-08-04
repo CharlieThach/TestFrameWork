@@ -1,21 +1,25 @@
 package testFrameWork;
 
+import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
+
+import utility.property;
 
 
 public class loginGmail {
-public String url = "http://www.google.com";
+public String url = "http://www.gmail.com";
 public WebDriver driver;
 
   @BeforeTest
-  public void setup(){
-	  Properties pop = new Properties(); 
-	  System.setProperty("webdriver.chrome.driver", "./resources/lib/chromedriver.exe");
+  public void setup() throws IOException{
+	  property proper = new utility.property();
+	  Properties prop = proper.readPropFile(); 
+	  
+	  System.setProperty("webdriver.chrome.driver", "./lib/chromedriver.exe");
 	  driver = new ChromeDriver();
 	  driver.get(url);
   }
@@ -26,7 +30,7 @@ public WebDriver driver;
   
   @AfterMethod
   public void houseCleaning(){
-	  
+	
   }
 
 }

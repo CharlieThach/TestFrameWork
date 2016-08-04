@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="main" name="Running Ant">
 	<target name="main"	depends="compile">
-	<java classname="testFrameWork.Starter">
+	<java classname="testFrameWork.loginGmail">
 		<classpath>
 			<pathelement path="./CompileCode"/>
 		</classpath>
