@@ -8,7 +8,6 @@ import java.util.Properties;
 public class loadProperty {
 
 	public Properties readPropFile() throws IOException{
-		String result ="";
 		Properties prop = new Properties();
 		String propFileName = "config.properties";
 		
