@@ -6,8 +6,8 @@
       <class name="testFrameWork.loginGmail">
         <methods>
           <include name="login"/>
-          <include name="test2"/>
           <include name="setup"/>
+          <include name="houseCleaning"/>
         </methods>
       </class> <!-- testFrameWork.loginGmail -->
     </classes>
