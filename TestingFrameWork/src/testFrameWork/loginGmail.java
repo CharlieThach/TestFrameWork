@@ -3,7 +3,7 @@ package testFrameWork;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.junit.Assert;
+import org.testng.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
@@ -18,7 +18,7 @@ import utility.loadProperty;
 public class loginGmail {
 public String url = "http://www.google.com";
 public ExtentReports report; 
-public ExtentTest logger; 
+public ExtentTest logger;
 public WebDriver driver; 
   @BeforeTest
   public void setup() throws IOException{
@@ -26,26 +26,23 @@ public WebDriver driver;
 	  Properties prop = proper.readPropFile(); 
 	  System.setProperty(prop.getProperty("drivername"), prop.getProperty("chromedriver"));
 	  driver = new ChromeDriver();
-	 
+
   }
-  @Test (priority = 0)
+  @Test 
   public void test2(){
-//  driver.manage().window().maximize();
-	  driver.get(url);
-	  report = new ExtentReports("./Report/home.html");
+	  report = new ExtentReports("C:/Report/home1.html");
 	  logger = report.startTest("loginGmail");
-	
+	  driver.get(url);
+	  logger.log(LogStatus.INFO, "Opening chrome browser");
 	  String title = driver.getTitle();
-	  logger.log(LogStatus.INFO, "Opening browser");
+	  logger.log(LogStatus.INFO, "Grab title");
 	  Assert.assertTrue(title.contains("Google"));
-	  logger.log(LogStatus.INFO, "Compare page");
+	  logger.log(LogStatus.PASS, "Login Gmail verified");
+
   }
   
   @AfterMethod
   public void houseCleaning(ITestResult result){
-	  if(result.getStatus()== ITestResult.FAILURE){
-		  System.out.println("Fail answer");
-	  }
 	report.endTest(logger);
 	report.flush();  
 	driver.quit();
