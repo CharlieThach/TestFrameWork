@@ -12,7 +12,8 @@ public WebDriver driver;
 
   @BeforeTest
   public void setup(){
-	  driver = new FirefoxDriver();
+	  System.setProperty("webdriver.chrome.driver", "./lib/chromedriver.exe");
+	  driver = new ChromeDriver();
 	  driver.get(url);
   }
   @Test (priority = 1)
