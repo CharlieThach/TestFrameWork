@@ -23,5 +23,6 @@
 	<classpathentry kind="lib" path="C:/Users/Charles/Desktop/extentreports-java-v2.41.1/lib/snakeyaml-1.15.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Charles/Desktop/extentreports-java-v2.41.1/lib/sqlite-jdbc-3.8.11.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Charles/Desktop/extentreports-java-v2.41.1/lib/testng-6.9.9.jar"/>
+	<classpathentry kind="lib" path="lib/jxl-2.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
