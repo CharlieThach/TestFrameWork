@@ -6,12 +6,12 @@ public class testing {
 
 	public static void main(String arg[]){
 		
-		ArrayList<Record> rec = new ArrayList<Record>(); 
+		ArrayList<dataRecord> rec = new ArrayList<dataRecord>(); 
 		loadTestCases load = new loadTestCases();
 		
 		rec = load.readExcel(); 
 		
-		for(Record a: rec){
+		for(dataRecord a: rec){
 			System.out.println(a.getMethodName()+"\t"+ a.getUser() +"\t"+a.getPass()+"\t"+a.getExpectedValue());
 		}
 		

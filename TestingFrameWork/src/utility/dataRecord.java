@@ -4,7 +4,7 @@
  */
 
 package utility;
-public class Record {
+public class dataRecord {
 	private String testID;
 	private String user;
 	private String pass; 

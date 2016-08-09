@@ -17,16 +17,16 @@ public class loadTestCases {
 	Workbook wb; 
 	int numOfRow;
 	int numOfCol; 
-	ArrayList<Record> arrRec; 
+	ArrayList<dataRecord> arrRec; 
 
 	loadTestCases(){
 		filePath = "src/testCase/booktest.xls";
 		numOfRow = 0;
 		numOfCol = 0; 
-		arrRec = new ArrayList<Record>(); 
+		arrRec = new ArrayList<dataRecord>(); 
 	}
 
-	public ArrayList<Record> readExcel(){
+	public ArrayList<dataRecord> readExcel(){
 	 	
 		try {
 			fs = new FileInputStream(filePath);
@@ -45,7 +45,7 @@ public class loadTestCases {
 		numOfRow = sh.getRows();
 		numOfCol = sh.getColumns(); 
 			for( int i = 1; i < numOfRow; i++){
-				Record rec = new Record(); //add data into the arraylist 
+				dataRecord rec = new dataRecord(); //add data into the arraylist 
 				
 				for(int j = 0; i< numOfCol; j++){
 				

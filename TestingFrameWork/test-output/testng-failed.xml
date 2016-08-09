@@ -5,9 +5,10 @@
     <classes>
       <class name="testFrameWork.loginGmail">
         <methods>
-          <include name="test2"/>
-          <include name="setup"/>
+          <include name="invalidLogin"/>
+          <include name="closeDriver"/>
           <include name="houseCleaning"/>
+          <include name="starterDriver"/>
         </methods>
       </class> <!-- testFrameWork.loginGmail -->
     </classes>
