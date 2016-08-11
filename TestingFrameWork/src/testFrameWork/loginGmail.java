@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -47,20 +48,23 @@ loadProperty proper;
   public void checkPage(){
 	 
 	  logger = report.startTest("checkPage");
+	  logger.log(LogStatus.INFO, "Start test ");
 	  driver.get(url);
-	  logger.log(LogStatus.INFO, "Opening chrome browser");
+	  logger.log(LogStatus.INFO, "Fetch url: "+url);
 	  String title = driver.getTitle();
-	  logger.log(LogStatus.INFO, "Grab title");
+	  logger.log(LogStatus.INFO, "Grab title "+driver.getTitle() );
 	  Assert.assertTrue(title.contains("Gmail"));
-	  logger.log(LogStatus.INFO, "Login Gmail verified");
+	  logger.log(LogStatus.INFO, driver.getTitle()+" with "+"Gmail");
 	  report.endTest(logger);
   }
   @Test 
   public void validLogin(){
 	  logger = report.startTest("validLogin");
+	  logger.log(LogStatus.INFO, " Starting Test ");
 	  driver.get(url);
+	  logger.log(LogStatus.INFO, " Fetch ur; : "+url);
 	  	wait.until(ExpectedConditions.elementToBeClickable(By.id("next")));
-	  	logger.log(LogStatus.PASS, "Opening chrome browser");
+	  	logger.log(LogStatus.INFO, "Wait for id NEXT to Appear");
 	  driver.findElement(By.id("Email")).sendKeys(prop.getProperty("user"));
 	  driver.findElement(By.id("next")).click(); 
 	  	wait.until(ExpectedConditions.elementToBeClickable(By.id("Passwd")));
@@ -68,9 +72,7 @@ loadProperty proper;
 	  driver.findElement(By.id("Passwd")).sendKeys(prop.getProperty("pass"));
 	  driver.findElement(By.id("signIn")).click();
 	  	wait.until(ExpectedConditions.elementToBeClickable(By.id("gbqfb")));
-	  Assert.assertTrue(driver.getTitle().contains("choithach@gmail.com"));
-	  	report.endTest(logger);
-	  
+	  Assert.assertTrue(driver.getTitle().contains("choithach@gmail.com"));	  
   }
   @Test
   public void invalidLogin(){
@@ -82,11 +84,19 @@ loadProperty proper;
 	  	logger.log(LogStatus.INFO, "Grab title page");
 		  driver.findElement(By.id("Passwd")).sendKeys("testing");
 		  driver.findElement(By.id("signIn")).click();
-		  Assert.assertTrue(driver.getTitle().contains("choithach@gmail.com"));
-		  report.endTest(logger);
+		  Assert.assertTrue(driver.getTitle().contains("Gmail"));
+		  
   }
   @AfterMethod
-  public void closeDriver(){
+  public void closeDriver(ITestResult result){
+	 if(result.isSuccess()){
+		 logger.log(LogStatus.INFO,"Test case "+logger.getClass().getName()+" has been verified");
+		 logger.log(LogStatus.PASS, "Passed");
+	 }else{
+		 logger.log(LogStatus.INFO,"Test case "+logger.getClass().getName()+" has been verified");
+		 logger.log(LogStatus.FAIL, "Test Failed");
+	 }
+	 report.endTest(logger);
 	  driver.quit();
   }
   @AfterTest
